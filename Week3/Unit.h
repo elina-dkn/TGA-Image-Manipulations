@@ -3,6 +3,7 @@
 
 #include "Resource.h"
 #include "SoundEffect.h"
+#include "FileChunk.h"
 class Unit : public Resource
 {
 public:
@@ -16,8 +17,10 @@ public:
 
 	static ObjectPool<Unit>* Pool;
 
+
 private:
 	SoundEffect* m_soundEffect;
+	FileChunk* m_fileChunk;
 
 };
 

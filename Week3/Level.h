@@ -13,13 +13,17 @@ public:
 	void ToString() override;
 	void AssignNonDefaultValues() override;
 
-	
-
+	void CreateImageBuffer();
+	void DeleteImageBuffer();
+	void AddChunk(int i);
+	void WriteImage();
 private:
-	int m_mapSizeX;
-	int m_mapSizeY;
-	float m_gameTime;
+	vector<FileChunk*> m_fileChunks;
 	vector<Unit*> m_units;
+	byte* m_imageBuffer;
+	int m_totalSize;
+	int m_offset;
+	
 
 };
 

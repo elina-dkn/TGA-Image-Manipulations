@@ -25,7 +25,7 @@ public:
 			return resource;
 		}
 		else {
-			cout << "Reusing existing: " << typeid(T).name() << endl;
+			cout << "Reusing existing pool object: " << typeid(T).name() << endl;
 			T* resource = m_available[0];
 			m_available.erase(m_available.begin());
 			return resource;
