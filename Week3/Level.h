@@ -13,18 +13,19 @@ public:
 	void ToString() override;
 	void AssignNonDefaultValues() override;
 
+	int GetIndex() { return m_index; }
 	void CreateImageBuffer();
 	void DeleteImageBuffer();
-	void AddChunk(int i);
-	void WriteImage();
+	void AddChunk();
+	void RemoveChunk();
 private:
+	void WriteImage();
 	vector<FileChunk*> m_fileChunks;
-	vector<Unit*> m_units;
 	byte* m_imageBuffer;
 	int m_totalSize;
 	int m_offset;
+	int m_index;
 	
-
 };
 
 #endif

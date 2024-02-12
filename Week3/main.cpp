@@ -2,6 +2,7 @@
 //
 
 #include "Level.h"
+#include "CommandController.h"
 
 
 
@@ -10,11 +11,16 @@ int main()
 	Level* level = new Level();
 	level->AssignNonDefaultValues();
 	level->ToString();
+
+	CommandController* cc = new CommandController();
+
 	string i = "";
+
 	do {
 		cout << endl;
 		cout << "[Q]uit	[S]ave Level	[L]oad Level [Z] Undo	[Y] Redo" << endl;
 		cout << "[C]reate Image buffer	[D]elete Image buffer	[A]dd chunk	[R]emove chunk" << endl;
+		cout << "Index ("<< level->GetIndex() << ")	Undo count (" << cc->GetUndo() << ")	Redo count (" << cc->GetRedo() << ")" << endl;
 		cout << endl;
 		cin >> i;
 		if (i == "s" || i == "S") {
@@ -33,15 +39,8 @@ int main()
 			cout << "Loaded Level: ";
 			level->ToString();
 		}
-		else if (i == "c" || i == "C") {
-			level->CreateImageBuffer();
-		}
-		else if (i == "d" || i == "D") {
-			level->DeleteImageBuffer();
-		}
-		else if (i == "a" || i == "A") {
-			level->AddChunk(0);
-			level->WriteImage();
+		else {
+			cc->HandleInput(i, level);
 		}
 	} while (i != "Q" && i != "q");
 

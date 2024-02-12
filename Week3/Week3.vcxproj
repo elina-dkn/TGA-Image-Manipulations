@@ -129,20 +129,24 @@
   <ItemGroup>
     <ClCompile Include="Asset.cpp" />
     <ClCompile Include="AssetController.cpp" />
+    <ClCompile Include="CommandController.cpp" />
     <ClCompile Include="FileChunk.cpp" />
     <ClCompile Include="FileController.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ObjectPool.cpp" />
     <ClCompile Include="Resource.cpp" />
-    <ClCompile Include="Serializable.cpp" />
-    <ClCompile Include="SoundEffect.cpp" />
     <ClCompile Include="StackAllocator.cpp" />
     <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asset.h" />
     <ClInclude Include="AssetController.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandAdd.h" />
+    <ClInclude Include="CommandController.h" />
+    <ClInclude Include="CommandCreate.h" />
+    <ClInclude Include="CommandDelete.h" />
+    <ClInclude Include="CommandRemove.h" />
     <ClInclude Include="FileChunk.h" />
     <ClInclude Include="FileController.h" />
     <ClInclude Include="Level.h" />
@@ -150,15 +154,9 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Serializable.h" />
     <ClInclude Include="Singleton.h" />
-    <ClInclude Include="SoundEffect.h" />
     <ClInclude Include="StackAllocator.h" />
     <ClInclude Include="StandardIncludes.h" />
     <ClInclude Include="Unit.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Text1.txt" />
-    <Text Include="Text2.txt" />
-    <Text Include="Text3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
